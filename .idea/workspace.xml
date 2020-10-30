@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c813ead9-a04b-461a-a2c7-bbf1ac6d2d4a" name="Default Changelist" comment="" />
+    <list default="true" id="c813ead9-a04b-461a-a2c7-bbf1ac6d2d4a" name="Default Changelist" comment="leeresProjekt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,12 +36,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604072629823</updated>
-      <workItem from="1604072631084" duration="2592000" />
+      <workItem from="1604072631084" duration="4541000" />
     </task>
+    <task id="LOCAL-00001" summary="leeresProjekt">
+      <created>1604085416231</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604085416231</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="leeresProjekt" />
+    <option name="LAST_COMMIT_MESSAGE" value="leeresProjekt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604076537967">
