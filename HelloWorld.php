@@ -43,9 +43,9 @@ echo $b;
 
 
 $var = "Wir lernen PHP!";
-echo $var{0};
-echo $var{5};
-echo $var{7};
+echo $var[0];
+echo $var[5];
+echo $var[7];
 echo "<br>";
 
 //Integer
@@ -80,9 +80,11 @@ $name[2] = "Jürgen";
 // veraltete Schreibweise: array()-Funktion
 $name = array("Maria", "Ute", "Jürgen");
 
-echo "2. Name im Array: $name[1] <br>";
+$name[]= "Uta";
+
+echo "2. Name im Array: $name[1] <br>"; //String mit Variablenauswertung eingeschlossen "" ohne ''
 echo "1. Name im Array: $name[0] <br>";
-echo "3. Name im Array: $name[2] <br>";
+echo "4. Name im Array: $name[3] <br>";
 
 
 //ASSOZIATIVE ARRAYS - erstes Element Index 0
@@ -137,10 +139,10 @@ $one = [1, 2, 3, 4];
 $two = [1, 2, 3];
 $three = ["x" => 1, "y" => 2, "z" => 3];
 
-if ($one == $two) {
+if ($one == $two) { //nur Wert vergleichen
     echo '1: $one & $two haben den gleichen Inhalt!';
 }
-if ($one === $two) {
+if ($one === $two) { //Typ und Wert vergleichen
     echo '2: $one & $two sind identisch!';
 }
 if ($one == $three) {
@@ -161,8 +163,16 @@ for ($i = 0 ; $i < sizeof(array_intersect($one,$two)); $i++) {
 
 //Hinterlässt differenz[3] = 4
 $differenz = array_diff($one,$two);
-echo "<br>" . $differenz[3];
 
+//Komplettes ARRAY mittels var_dump() oder print_r() und <pre>-Element ausgeben
+echo "Ausgabe mit var_dump() <br>";
+var_dump($differenz);
+echo "<hr>";
+
+echo "Ausgabe mit einem pre-Element";
+echo "<pre>";
+print_r($differenz);
+echo "</pre>";
 
 
 
