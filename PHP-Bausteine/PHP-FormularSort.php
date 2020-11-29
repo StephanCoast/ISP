@@ -44,7 +44,7 @@ function closeFormAndFooter()
 $fieldCount = 3;
 
 writeHeaderAndHeadline();
-startForm("post", "PHP-Formular4a.php");
+startForm("post", "antwort.php");
 for ($count = 1; $count <= $fieldCount; $count++) {
     writeInputField("$count. Ort", "ort$count");
 }

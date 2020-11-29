@@ -11,35 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/1st_PHP-Project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tabelle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/w_einteilung.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorld.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/HelloWorld.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Arrays.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Cookie.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Cookie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Cookie2.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Cookie2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Cookie3.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Cookie3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-DateienProzesseVerzeichnisse.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-DateienProzesseVerzeichnisse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Fehlerbehebung.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Fehlerbehebung.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Formular.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Formular.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Formular2a.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Formular2a.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Formular3b.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Formular3b.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Formular4a.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Formular4a.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-FormularSort.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-FormularSort.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-HTML.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-HTML.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Kontrollstrukturen.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Kontrollstrukturen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-StringFunktionen.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-StringFunktionen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Syntax.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Syntax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Unterprogramme.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Unterprogramme.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/a.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formular3b.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/formular3b.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP-Bausteine/PHP-FormularSort.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-FormularSort.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connectDB.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,24 +36,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="http://localhost" id="30abaceb-7030-4706-87a9-c32e88b2c187" name="THB" />
+    </servers>
+  </component>
   <component name="ProjectId" id="1kvbbYm9gkim11o1yO3H90XzulX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="sql.rename.search.for.storage.occurrences" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ISP" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ISP" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ISP" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="XAMPP-Debug" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="THB" start_url="http://localhost/ISP/w_einteilung.php">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="THB" start_url="">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,8 +85,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606584083649</updated>
-      <workItem from="1606584084824" duration="1445000" />
+      <workItem from="1606584084824" duration="8475000" />
+      <workItem from="1606638136124" duration="22189000" />
     </task>
+    <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
+      <created>1606585887570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606585887570</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,20 +111,105 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Neues VZ - Projektstart" />
     <option name="LAST_COMMIT_MESSAGE" value="Neues VZ - Projektstart" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1352" y="15" key="#Deployment" timestamp="1606585541328">
+    <state x="-1352" y="15" key="#Deployment" timestamp="1606639456472">
       <screen x="-1920" y="-125" width="1920" height="1160" />
     </state>
-    <state x="-1352" y="15" key="#Deployment/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606585541328" />
+    <state x="-1352" y="15" key="#Deployment/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606639456472" />
     <state x="-1368" y="2" key="#SSH_Configurations" timestamp="1606584938098">
       <screen x="-1920" y="-125" width="1920" height="1160" />
     </state>
     <state x="-1368" y="2" key="#SSH_Configurations/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606584938098" />
+    <state x="-1352" y="53" key="#Servers" timestamp="1606593060088">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1352" y="53" key="#Servers/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606593060088" />
+    <state x="-1478" y="53" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606665766078">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1478" y="53" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606665766078" />
+    <state x="-1167" y="164" key="#com.intellij.ide.util.MemberChooser" timestamp="1606663012033">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1167" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606663012033" />
+    <state x="-1235" y="-125" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606666084674">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1235" y="-125" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606666084674" />
+    <state x="-1230" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606642322901">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1230" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606642322901" />
+    <state width="636" height="321" key="GridCell.Tab.0.bottom" timestamp="1606671511594">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="636" height="321" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606671511594" />
+    <state width="636" height="321" key="GridCell.Tab.0.center" timestamp="1606671511593">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="636" height="321" key="GridCell.Tab.0.center/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606671511593" />
+    <state width="636" height="321" key="GridCell.Tab.0.left" timestamp="1606671511593">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="636" height="321" key="GridCell.Tab.0.left/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606671511593" />
+    <state width="636" height="321" key="GridCell.Tab.0.right" timestamp="1606671511593">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="636" height="321" key="GridCell.Tab.0.right/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606671511593" />
+    <state width="767" height="242" key="GridCell.Tab.1.bottom" timestamp="1606595213459">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213459" />
+    <state width="767" height="242" key="GridCell.Tab.1.center" timestamp="1606595213459">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.1.center/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213459" />
+    <state width="767" height="242" key="GridCell.Tab.1.left" timestamp="1606595213459">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.1.left/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213459" />
+    <state width="767" height="242" key="GridCell.Tab.1.right" timestamp="1606595213459">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.1.right/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213459" />
+    <state width="767" height="242" key="GridCell.Tab.2.bottom" timestamp="1606595213460">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.2.bottom/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213460" />
+    <state width="767" height="242" key="GridCell.Tab.2.center" timestamp="1606595213459">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.2.center/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213459" />
+    <state width="767" height="242" key="GridCell.Tab.2.left" timestamp="1606595213459">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.2.left/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213459" />
+    <state width="767" height="242" key="GridCell.Tab.2.right" timestamp="1606595213459">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state width="767" height="242" key="GridCell.Tab.2.right/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606595213459" />
+    <state x="-1137" y="178" key="NewPhpClassDialog" timestamp="1606665933724">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1137" y="178" key="NewPhpClassDialog/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606665933724" />
+    <state x="-1098" y="321" key="NewPhpFileDialog" timestamp="1606645848790">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1098" y="321" key="NewPhpFileDialog/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606645848790" />
+    <state x="-1391" y="102" key="SettingsEditor" timestamp="1606639874111">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1391" y="102" key="SettingsEditor/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606639874111" />
+    <state x="-1164" y="275" width="408" height="347" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1606663675802">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1164" y="275" width="408" height="347" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606663675802" />
     <state x="-1128" y="87" key="ftp.server.browser" timestamp="1606584437654">
       <screen x="-1920" y="-125" width="1920" height="1160" />
     </state>
@@ -118,5 +218,9 @@
       <screen x="-1920" y="-125" width="1920" height="1160" />
     </state>
     <state x="-1100" y="248" key="publish.login/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606584425593" />
+    <state x="-1297" y="130" width="672" height="678" key="search.everywhere.popup" timestamp="1606641444827">
+      <screen x="-1920" y="-125" width="1920" height="1160" />
+    </state>
+    <state x="-1297" y="130" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.-125.1920.1160@-1920.-125.1920.1160" timestamp="1606641444827" />
   </component>
 </project>
