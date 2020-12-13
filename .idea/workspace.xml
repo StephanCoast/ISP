@@ -13,9 +13,6 @@
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTMLB.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP-Bausteine/PHP-Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Arrays.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/w_einteilung.php" beforeDir="false" afterPath="$PROJECT_DIR$/w_einteilung.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +79,7 @@
       <workItem from="1606638136124" duration="24047000" />
       <workItem from="1607852884743" duration="30000" />
       <workItem from="1607852971516" duration="102000" />
-      <workItem from="1607853149618" duration="25758000" />
+      <workItem from="1607853149618" duration="26811000" />
     </task>
     <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
       <created>1606585887570</created>
@@ -105,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607860357337</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="addEvent in SQL event und hasEvent, responsive HTML Tabelle start">
+      <created>1607884518599</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607884518599</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +131,8 @@
     <MESSAGE value="Neues VZ - Projektstart" />
     <MESSAGE value="Register&amp;Login realisiert" />
     <MESSAGE value="HTML Bausteine ausgelagert, Ausloggen Button in W_Einteilung" />
-    <option name="LAST_COMMIT_MESSAGE" value="HTML Bausteine ausgelagert, Ausloggen Button in W_Einteilung" />
+    <MESSAGE value="addEvent in SQL event und hasEvent, responsive HTML Tabelle start" />
+    <option name="LAST_COMMIT_MESSAGE" value="addEvent in SQL event und hasEvent, responsive HTML Tabelle start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

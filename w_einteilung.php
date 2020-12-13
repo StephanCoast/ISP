@@ -31,6 +31,8 @@ echo '<br><br>';
 
 $showPage = true;
 
+// EVENT hinzufügen Button Aktion definieren
+
 if(isset($_GET['newEvent'])) {
 
     print_r($_POST);
@@ -121,7 +123,7 @@ if ($showPage) {
     HTMLB::writeInputField("Datum", "datum", "date");
     HTMLB::closeForm("Event hinzufügen");
 
-    HTMLB::responsiveTable(date("d.m.Y"), $mitarbeiter);
+    HTMLB::responsiveTable($mitarbeiter, '2020-12-17', '2020-12-31');
 }
 
 HTMLB::writeFooter();

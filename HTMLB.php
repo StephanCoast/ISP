@@ -58,7 +58,7 @@ class HTMLB
 
     //TABELLE KONSTRUIEREN
 
-    public static function responsiveTable($auswahlTage, $alleMitarbeiter) {
+    public static function responsiveTable($mitarbeiter, $von, $bis) {
 
 
         echo "<div style=\"overflow-x:auto;\">
@@ -66,16 +66,20 @@ class HTMLB
               <tr>
                 <th>Mitarbeiter</th>
                 <th>Datum</th>
-              </tr>
-              <tr>
-                <td>Kost, Stephan</td>
+              </tr>";
+
+
+        for ($i=0; $i<count($mitarbeiter); $i++) {
+            $nameMA = $mitarbeiter[$i]['nachname'] . ", " . $mitarbeiter[$i]['vorname'];
+
+            echo  " <tr>
+                <td>$nameMA</td>
                 <td>Event1</td>
-              </tr>
-              <tr>
-                <td>Klein, Holger</td>
-                <td>keinEvent</td>
-              </tr>
-            </table>
+              </tr>";
+        }
+
+
+        echo   "</table>
             </div> ";
     }
 
