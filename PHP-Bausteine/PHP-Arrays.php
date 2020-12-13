@@ -92,6 +92,7 @@ function compare($one, $two)
     if ($two == $one) return 0;
 }
 
+//ASSOZIATIVES ARRAY
 $digits = [4 => "vier", 3 => "drei", 20 => "zwanzig", 10 => "zehn"];
 uksort($digits, "compare");
 

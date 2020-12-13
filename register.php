@@ -24,6 +24,16 @@ if(isset($_GET['register'])) {
     $nachname = $_POST['nachname'];
 
 
+    if (empty($vorname)) {
+        echo 'Bitte einen Vornamen eingeben!<br>';
+        $error = true;
+    }
+
+    if (empty($nachname)) {
+        echo 'Bitte einen Nachnamen eingeben!<br>';
+        $error = true;
+    }
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
         $error = true;
@@ -70,7 +80,7 @@ if(isset($_GET['register'])) {
 HTMLB::writeHeader();
 
 if ($showFormular) {
-    HTMLB::writeHeadline("Wocheneinteilungen");
+    HTMLB::writeHeadline("Wocheneinteilung");
     HTMLB::startForm("post", "?register=1");
     HTMLB::writeInputField("Vorname", "vorname", "text");
     HTMLB::writeInputField("Nachname", "nachname", "text");

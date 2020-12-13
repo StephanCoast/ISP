@@ -49,7 +49,7 @@ if(isset($_GET['login'])) {
 HTMLB::writeHeader();
 
 if ($showFormular) {
-    HTMLB::writeHeadline("Wocheneinteilungen");
+    HTMLB::writeHeadline("Wocheneinteilung");
     HTMLB::startForm("post", "?login=1");
     HTMLB::writeInputField("E-Mail", "email", "email");
     HTMLB::writeInputField("Passwort", "passwort", "password");

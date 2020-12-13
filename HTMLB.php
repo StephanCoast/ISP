@@ -56,6 +56,29 @@ class HTMLB
         echo "</select>";
     }
 
+    //TABELLE KONSTRUIEREN
+
+    public static function responsiveTable($auswahlTage, $alleMitarbeiter) {
+
+
+        echo "<div style=\"overflow-x:auto;\">
+                <table>
+              <tr>
+                <th>Mitarbeiter</th>
+                <th>Datum</th>
+              </tr>
+              <tr>
+                <td>Kost, Stephan</td>
+                <td>Event1</td>
+              </tr>
+              <tr>
+                <td>Klein, Holger</td>
+                <td>keinEvent</td>
+              </tr>
+            </table>
+            </div> ";
+    }
+
 
     public static function addLinkButton($text, $name, $link) {
 
