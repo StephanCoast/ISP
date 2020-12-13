@@ -1,5 +1,7 @@
 <?php
 
+require_once 'HTMLB.php';
+
 /**
  * Login User
  * Dateiname: index.php
@@ -10,6 +12,7 @@
 
 session_start();
 $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de;dbname=kosts_db', 'kosts', '20192019');
+$pdo->exec("set names utf8");
 $showFormular = true;
 
 
@@ -43,60 +46,18 @@ if(isset($_GET['login'])) {
 
 // Beginn des Hauptprogramms
 
-writeHeader();
+HTMLB::writeHeader();
 
 if ($showFormular) {
-    writeHeadline();
-    startForm("post", "?login=1");
-    writeInputField("E-Mail", "email", "email");
-    writeInputField("Passwort", "passwort", "password");
-    closeForm();
+    HTMLB::writeHeadline("Wocheneinteilungen");
+    HTMLB::startForm("post", "?login=1");
+    HTMLB::writeInputField("E-Mail", "email", "email");
+    HTMLB::writeInputField("Passwort", "passwort", "password");
+    HTMLB::closeForm("Einloggen");
 }
 
 if  (isset($fehlermeldung)) {
     echo $fehlermeldung;
 }
 
-writeFooter();
-
-
-//HTML-Bausteine
-
-function writeHeader()
-{
-    echo "<!DOCTYPE html>
-          <html lang=\"de\">
-          <head><title>Wocheneinteilung</title>
-          </head>
-          <body>";
-}
-
-function writeHeadline()
-{
-    echo "<h1>Log-IN</h1>";
-}
-
-function startForm($method, $url)
-{
-    echo "<form method=\"$method\" action=\"$url\">";
-}
-
-function writeInputField($text, $name, $typ)
-
-{
-    echo "<label for=\"$name\">$text: </label>
-          <input type=\"$typ\" name=\"$name\" id=\"$name\">
-          <br><br>";
-}
-
-
-function closeForm()
-{
-    echo "<input type=\"submit\" value=\"Einloggen\">
-          </form>";
-}
-
-function writeFooter()
-{
-    echo "</body></html>";
-}
+HTMLB::writeFooter();

@@ -1,7 +1,10 @@
 <?php
 
+require_once 'HTMLB.php';
+
 session_start();
 $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de;dbname=kosts_db', 'kosts', '20192019');
+$pdo->exec("set names utf8");
 $showFormular = true;
 
 /**
@@ -10,46 +13,6 @@ $showFormular = true;
  * @author Stephan Kost
  * @date 29.11.2020
  */
-
-
-function writeHeader()
-{
-    echo "<!DOCTYPE html>
-          <html lang=\"de\">
-          <head><title>Wocheneinteilung</title>
-          </head>
-          <body>";
-}
-
-function writeHeadline()
-{
-    echo "<h1>Log-IN</h1>";
-}
-
-function startForm($method, $url)
-{
-    echo "<form method=\"$method\" action=\"$url\">";
-}
-
-function writeInputField($text, $name, $typ)
-
-{
-    echo "<label for=\"$name\">$text: </label>
-          <input type=\"$typ\" name=\"$name\" id=\"$name\">
-          <br><br>";
-}
-
-
-function closeForm()
-{
-    echo "<input type=\"submit\" value=\"Einloggen\">
-          </form>";
-}
-
-function writeFooter()
-{
-    echo "</body></html>";
-}
 
 
 if(isset($_GET['register'])) {
@@ -104,17 +67,17 @@ if(isset($_GET['register'])) {
 
 // Beginn des Hauptprogramms
 
-writeHeader();
+HTMLB::writeHeader();
 
 if ($showFormular) {
-    writeHeadline();
-    startForm("post", "?register=1");
-    writeInputField("Vorname", "vorname", "text");
-    writeInputField("Nachname", "nachname", "text");
-    writeInputField("E-Mail", "email", "email");
-    writeInputField("Passwort", "passwort", "password");
-    writeInputField("Passwort wiederholen", "passwort2", "password");
-    closeForm();
+    HTMLB::writeHeadline("Wocheneinteilungen");
+    HTMLB::startForm("post", "?register=1");
+    HTMLB::writeInputField("Vorname", "vorname", "text");
+    HTMLB::writeInputField("Nachname", "nachname", "text");
+    HTMLB::writeInputField("E-Mail", "email", "email");
+    HTMLB::writeInputField("Passwort", "passwort", "password");
+    HTMLB::writeInputField("Passwort wiederholen", "passwort2", "password");
+    HTMLB::closeForm("Registrieren");
 }
 
-writeFooter();
+HTMLB::writeFooter();

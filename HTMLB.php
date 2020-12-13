@@ -25,6 +25,13 @@ class HTMLB
         echo "<form method=\"$method\" action=\"$url\">";
     }
 
+    public static function closeForm($label)
+    {
+        echo "<input type=\"submit\" value=\"$label\">
+          </form>";
+    }
+
+
     public static function writeInputField($text, $name, $typ)
 
     {
@@ -50,10 +57,9 @@ class HTMLB
     }
 
 
-    public static function closeForm($label)
-    {
-        echo "<input type=\"submit\" value=\"$label\">
-          </form>";
+    public static function addLinkButton($text, $name, $link) {
+
+        echo "<input type=button onClick=\"parent.location='$link'\" name=\"$name\" value=\"$text\">";
     }
 
     public static function writeFooter()

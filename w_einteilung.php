@@ -5,14 +5,12 @@ require_once 'Event.php';
 
 session_start();
 $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de;dbname=kosts_db', 'kosts', '20192019');
-
+$pdo->exec("set names utf8");
 
 /*
 if(!isset($_SESSION['userid'])) {
     exit('Bitte zuerst <a href="index.php">einloggen</a>');
 }
-
-
 
 //Abfrage der Nutzer ID vom Login
 $userid = $_SESSION['userid'];
@@ -36,12 +34,15 @@ HTMLB::writeHeader();
 
 if ($showFormular) {
     HTMLB::writeHeadline("Wocheneinteilungen");
+
+    HTMLB::addLinkButton("Ausloggen", "logoutButton", "logout.php");
+
     HTMLB::startForm("post", "?newEvent=1");
 
 
     $statement = $pdo->prepare("SELECT vorname, nachname FROM mitarbeiter");
     $result = $statement->execute();
-    $mitarbeiter = $statement->fetch();
+    $mitarbeiter = $statement->fetchAll();
 
     print_r($mitarbeiter);
 
