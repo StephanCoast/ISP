@@ -11,9 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/DB-Anbindung-PRO/StudentModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/DB-Anbindung-PRO/StudentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/DB-Anbindung-PRO/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Datenbank.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-RA_ReguläreAusdrücke.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-RA_SuchenErsetzen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTMLB.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/w_einteilung.php" beforeDir="false" afterPath="$PROJECT_DIR$/w_einteilung.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +36,15 @@
     </servers>
   </component>
   <component name="ProjectId" id="1kvbbYm9gkim11o1yO3H90XzulX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -79,7 +87,9 @@
       <workItem from="1606638136124" duration="24047000" />
       <workItem from="1607852884743" duration="30000" />
       <workItem from="1607852971516" duration="102000" />
-      <workItem from="1607853149618" duration="26811000" />
+      <workItem from="1607853149618" duration="26849000" />
+      <workItem from="1608380630113" duration="9718000" />
+      <workItem from="1608456139977" duration="7276000" />
     </task>
     <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
       <created>1606585887570</created>
@@ -109,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607884518599</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="alle MAs in Tabellenzeilen">
+      <created>1607885534407</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607885534407</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,11 +145,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Neues VZ - Projektstart" />
     <MESSAGE value="Register&amp;Login realisiert" />
     <MESSAGE value="HTML Bausteine ausgelagert, Ausloggen Button in W_Einteilung" />
     <MESSAGE value="addEvent in SQL event und hasEvent, responsive HTML Tabelle start" />
-    <option name="LAST_COMMIT_MESSAGE" value="addEvent in SQL event und hasEvent, responsive HTML Tabelle start" />
+    <MESSAGE value="alle MAs in Tabellenzeilen" />
+    <option name="LAST_COMMIT_MESSAGE" value="alle MAs in Tabellenzeilen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
