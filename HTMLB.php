@@ -6,7 +6,7 @@ class HTMLB
 
     //HTML-Bausteine
 
-    public static function writeHeader()
+    public function writeHeader()
     {
         echo "<!DOCTYPE html>
           <html lang=\"de\">
@@ -15,24 +15,24 @@ class HTMLB
           <body>";
     }
 
-    public static function writeHeadline($headline)
+    public function writeHeadline($headline)
     {
         echo "<h1>$headline</h1>";
     }
 
-    public static function startForm($method, $url)
+    public function startForm($method, $url)
     {
         echo "<form method=\"$method\" action=\"$url\">";
     }
 
-    public static function closeForm($label)
+    public function closeForm($label)
     {
         echo "<input type=\"submit\" value=\"$label\">
           </form>";
     }
 
 
-    public static function writeInputField($text, $name, $typ)
+    public function writeInputField($text, $name, $typ)
 
     {
         echo "<label for=\"$name\">$text: </label>
@@ -41,24 +41,24 @@ class HTMLB
 
     //SELECT-ELEMENT VARIABEL FÜLLEN
 
-    public static function openselectElement($name) {
+    public function openselectElement($name) {
 
         echo "<select name=\"$name\">";
     }
 
-    public static function fillselectElement($value, $text) {
+    public function fillselectElement($value, $text) {
 
         echo "<option value=\"$value\">$text</option>";
     }
 
-    public static function closeselectElement() {
+    public function closeselectElement() {
 
         echo "</select>";
     }
 
     //TABELLE KONSTRUIEREN
 
-    public static function responsiveTable($mitarbeiter, $von, $bis) {
+    public function responsiveTable($mitarbeiter, $von, $bis) {
 
 
         echo "<div style=\"overflow-x:auto;\">
@@ -84,12 +84,12 @@ class HTMLB
     }
 
 
-    public static function addLinkButton($text, $name, $link) {
+    public function addLinkButton($text, $name, $link) {
 
         echo "<input type=button onClick=\"parent.location='$link'\" name=\"$name\" value=\"$text\">";
     }
 
-    public static function writeFooter()
+    public function writeFooter()
     {
         echo "</body></html>";
     }

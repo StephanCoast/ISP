@@ -76,18 +76,19 @@ if(isset($_GET['register'])) {
 }
 
 // Beginn des Hauptprogramms
+$HMTLbuild = new HTMLB();
 
-HTMLB::writeHeader();
+$HMTLbuild->writeHeader();
 
 if ($showFormular) {
-    HTMLB::writeHeadline("Wocheneinteilung");
-    HTMLB::startForm("post", "?register=1");
-    HTMLB::writeInputField("Vorname", "vorname", "text");
-    HTMLB::writeInputField("Nachname", "nachname", "text");
-    HTMLB::writeInputField("E-Mail", "email", "email");
-    HTMLB::writeInputField("Passwort", "passwort", "password");
-    HTMLB::writeInputField("Passwort wiederholen", "passwort2", "password");
-    HTMLB::closeForm("Registrieren");
+    $HMTLbuild->writeHeadline("Wocheneinteilung");
+    $HMTLbuild->startForm("post", "?register=1");
+    $HMTLbuild->writeInputField("Vorname", "vorname", "text");
+    $HMTLbuild->writeInputField("Nachname", "nachname", "text");
+    $HMTLbuild->writeInputField("E-Mail", "email", "email");
+    $HMTLbuild->writeInputField("Passwort", "passwort", "password");
+    $HMTLbuild->writeInputField("Passwort wiederholen", "passwort2", "password");
+    $HMTLbuild->closeForm("Registrieren");
 }
 
-HTMLB::writeFooter();
+$HMTLbuild->writeFooter();

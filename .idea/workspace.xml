@@ -11,13 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/DB-Anbindung-PRO/StudentModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/DB-Anbindung-PRO/StudentRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/DB-Anbindung-PRO/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-Datenbank.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-RA_ReguläreAusdrücke.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHP-Bausteine/PHP-RA_SuchenErsetzen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTMLB.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/w_einteilung.php" beforeDir="false" afterPath="$PROJECT_DIR$/w_einteilung.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,10 +60,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ISP" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ISP" />
     </key>
   </component>
@@ -89,7 +89,7 @@
       <workItem from="1607852971516" duration="102000" />
       <workItem from="1607853149618" duration="26849000" />
       <workItem from="1608380630113" duration="9718000" />
-      <workItem from="1608456139977" duration="7276000" />
+      <workItem from="1608456139977" duration="10716000" />
     </task>
     <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
       <created>1606585887570</created>
@@ -126,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607885534407</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Vor Umbau nach MVC-Struktur">
+      <created>1608478446291</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608478446291</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +158,8 @@
     <MESSAGE value="HTML Bausteine ausgelagert, Ausloggen Button in W_Einteilung" />
     <MESSAGE value="addEvent in SQL event und hasEvent, responsive HTML Tabelle start" />
     <MESSAGE value="alle MAs in Tabellenzeilen" />
-    <option name="LAST_COMMIT_MESSAGE" value="alle MAs in Tabellenzeilen" />
+    <MESSAGE value="Vor Umbau nach MVC-Struktur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vor Umbau nach MVC-Struktur" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

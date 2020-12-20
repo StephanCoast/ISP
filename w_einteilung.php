@@ -98,35 +98,35 @@ if(isset($_GET['newEvent'])) {
 
 
 // Hauptprogramm
-
+$HTMLbuild = new HTMLB();
 
 writeHeader();
 
 if ($showPage) {
-    HTMLB::writeHeadline("Wocheneinteilung");
+    $HTMLbuild->writeHeadline("Wocheneinteilung");
 
-    HTMLB::addLinkButton("Ausloggen", "logoutButton", "logout.php");
+    $HTMLbuild->addLinkButton("Ausloggen", "logoutButton", "logout.php");
 
-    HTMLB::startForm("post", "?newEvent=1");
+    $HTMLbuild->startForm("post", "?newEvent=1");
 
-    HTMLB::openselectElement("mitarbeiterID");
+    $HTMLbuild->openselectElement("mitarbeiterID");
 
     for ($i=0; $i<count($mitarbeiter); $i++) {
         $selectText = $mitarbeiter[$i]['nachname'] . ", " . $mitarbeiter[$i]['vorname'];
         $selectID = $mitarbeiter[$i]['id'];
-        HTMLB::fillselectElement("$selectID","$selectText");
+        $HTMLbuild->fillselectElement("$selectID","$selectText");
     }
 
-    HTMLB::closeselectElement();
+    $HTMLbuild->closeselectElement();
 
-    HTMLB::writeInputField("Event-Name", "eventName", "text");
-    HTMLB::writeInputField("Datum", "datum", "date");
-    HTMLB::closeForm("Event hinzufügen");
+    $HTMLbuild->writeInputField("Event-Name", "eventName", "text");
+    $HTMLbuild->writeInputField("Datum", "datum", "date");
+    $HTMLbuild->closeForm("Event hinzufügen");
 
-    HTMLB::responsiveTable($mitarbeiter, '2020-12-17', '2020-12-31');
+    $HTMLbuild->responsiveTable($mitarbeiter, '2020-12-17', '2020-12-31');
 }
 
-HTMLB::writeFooter();
+$HTMLbuild->writeFooter();
 
 
 

@@ -1,6 +1,8 @@
 <?php
 
-require_once 'HTMLB.php';
+require_once __DIR__.DIRECTORY_SEPARATOR.'HTMLB.php';
+require_once __DIR__.DIRECTORY_SEPARATOR.'DataRepository.php';
+require_once __DIR__.DIRECTORY_SEPARATOR.'DataModel.php';
 
 /**
  * Login User
@@ -9,11 +11,18 @@ require_once 'HTMLB.php';
  * @date 29.11.2020
  */
 
-
-session_start();
-$pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de;dbname=kosts_db', 'kosts', '20192019');
-$pdo->exec("set names utf8");
 $showFormular = true;
+session_start();
+
+try {
+    $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de; charset=utf8; dbname=kosts_db', 'kosts', '20192019');
+    $pdo->exec("set names utf8");
+
+} catch (Exception $e) {
+    echo "Verbindung zur Datenbank funktioniert nicht";
+    exit;
+}
+$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 
 if(isset($_GET['login'])) {
@@ -45,19 +54,20 @@ if(isset($_GET['login'])) {
 }
 
 // Beginn des Hauptprogramms
+$HTMLbuild = new HTMLB;
 
-HTMLB::writeHeader();
+$HTMLbuild->writeHeader();
 
 if ($showFormular) {
-    HTMLB::writeHeadline("Wocheneinteilung");
-    HTMLB::startForm("post", "?login=1");
-    HTMLB::writeInputField("E-Mail", "email", "email");
-    HTMLB::writeInputField("Passwort", "passwort", "password");
-    HTMLB::closeForm("Einloggen");
+    $HTMLbuild->writeHeadline("Wocheneinteilung");
+    $HTMLbuild->startForm("post", "?login=1");
+    $HTMLbuild->writeInputField("E-Mail", "email", "email");
+    $HTMLbuild->writeInputField("Passwort", "passwort", "password");
+    $HTMLbuild->closeForm("Einloggen");
 }
 
 if  (isset($fehlermeldung)) {
     echo $fehlermeldung;
 }
 
-HTMLB::writeFooter();
+$HTMLbuild->writeFooter();
