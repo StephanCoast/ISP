@@ -26,11 +26,11 @@ class DataRepository
 
         $data =  $stmt->fetchAll(PDO::FETCH_CLASS, "EventModel");
 
-
+        /*
         echo 'Das Objekt $data sieht wie folgt aus:<pre>';
         print_r($data);
         echo '</pre>';
-
+        */
 
         return $data;
     }

@@ -78,7 +78,7 @@ class HTMLB
     {
         $j = 0;
         echo "<div style=\"overflow-x:auto;\">
-                <table>
+                <table id='wocheneinteilung'>
               <tr>
                 <th>Mitarbeiter</th>";
               
@@ -124,6 +124,29 @@ class HTMLB
               eventsJSON = document.getElementById('hidden').innerHTML;
               let events = JSON.parse(eventsJSON);
               console.log(events);
+              
+              let table = document.getElementById('wocheneinteilung');
+              console.log(table.rows[1].cells[1].innerHTML);
+              let konkat = '';
+              let datediff = 0;
+              
+              for (let i=0; i < table.rows.length; i++) {
+              
+                  for (let e=0; e< events.length; e++) {
+                   
+                      konkat = '';
+                      konkat = konkat.concat(events[e]['nachname'], ', ' , events[e]['vorname'])
+                      console.log(konkat);
+                      
+                      if (konkat === table.rows[i].cells[0].innerHTML) {
+                          
+                          datediff = (((Date.parse(events[e]['datum']) - Date.parse(table.rows[0].cells[1].innerHTML)))/1000/60/60/24+1);
+                          console.log(datediff);
+                          table.rows[i].cells[datediff].innerHTML = events[e]['eventname'];
+                      }
+                      
+                  }
+              }
               
               </script>";
     }
