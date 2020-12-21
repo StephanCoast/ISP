@@ -80,8 +80,10 @@ class HTMLB
         echo "<div style=\"overflow-x:auto;\">
                 <table id='wocheneinteilung'>
               <tr>
-                <th>Mitarbeiter</th>";
-              
+                <th>Nachname</th>
+                <th>Vorname</th>";
+
+
             for ($date=$von; $date<=$bis; $date++) {
                 echo "<th>$date</th>";
             }
@@ -90,10 +92,12 @@ class HTMLB
 
 
             for ($i = 1; $i <= count($mitarbeiter); $i++) {
-                $nameMA = $mitarbeiter[$i-1]['nachname'] . ", " . $mitarbeiter[$i-1]['vorname'];
+                $nachnameMA = $mitarbeiter[$i-1]['nachname'];
+                $vornameMA = $mitarbeiter[$i-1]['vorname'];
 
                 echo " <tr>
-                    <td>$nameMA</td>";
+                    <td>$nachnameMA</td>
+                    <td>$vornameMA</td>";
 
                     for ($date=$von; $date<=$bis; $date++) {
                             $j++;
@@ -123,25 +127,19 @@ class HTMLB
 
               eventsJSON = document.getElementById('hidden').innerHTML;
               let events = JSON.parse(eventsJSON);
-              console.log(events);
+              //console.log(events);
               
               let table = document.getElementById('wocheneinteilung');
-              console.log(table.rows[1].cells[1].innerHTML);
-              let konkat = '';
               let datediff = 0;
               
               for (let i=0; i < table.rows.length; i++) {
               
-                  for (let e=0; e< events.length; e++) {
-                   
-                      konkat = '';
-                      konkat = konkat.concat(events[e]['nachname'], ', ' , events[e]['vorname'])
-                      console.log(konkat);
+                  for (let e=0; e< events.length; e++) {  
                       
-                      if (konkat === table.rows[i].cells[0].innerHTML) {
+                      if (table.rows[i].cells[0].innerHTML === events[e]['nachname'] && table.rows[i].cells[1].innerHTML === events[e]['vorname']) {
                           
-                          datediff = (((Date.parse(events[e]['datum']) - Date.parse(table.rows[0].cells[1].innerHTML)))/1000/60/60/24+1);
-                          console.log(datediff);
+                          datediff = (((Date.parse(events[e]['datum']) - Date.parse(table.rows[0].cells[2].innerHTML)))/1000/60/60/24+2);
+                          //console.log(datediff);
                           table.rows[i].cells[datediff].innerHTML = events[e]['eventname'];
                       }
                       
