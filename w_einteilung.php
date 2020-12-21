@@ -100,7 +100,7 @@ if(isset($_GET['newEvent'])) {
 // Hauptprogramm
 $HTMLbuild = new HTMLB();
 
-writeHeader();
+$HTMLbuild->writeHeader();
 
 if ($showPage) {
     $HTMLbuild->writeHeadline("Wocheneinteilung");

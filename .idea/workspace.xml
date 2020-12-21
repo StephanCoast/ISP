@@ -11,12 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DataModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTMLB.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/w_einteilung.php" beforeDir="false" afterPath="$PROJECT_DIR$/w_einteilung.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +86,8 @@
       <workItem from="1607852971516" duration="102000" />
       <workItem from="1607853149618" duration="26849000" />
       <workItem from="1608380630113" duration="9718000" />
-      <workItem from="1608456139977" duration="10716000" />
+      <workItem from="1608456139977" duration="11795000" />
+      <workItem from="1608552215041" duration="5739000" />
     </task>
     <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
       <created>1606585887570</created>
@@ -133,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608478446291</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="keine statischen Funktionen mehr; Model und Repository Klasse angelegt.">
+      <created>1608482070969</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608482070969</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,14 +164,15 @@
     <MESSAGE value="addEvent in SQL event und hasEvent, responsive HTML Tabelle start" />
     <MESSAGE value="alle MAs in Tabellenzeilen" />
     <MESSAGE value="Vor Umbau nach MVC-Struktur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vor Umbau nach MVC-Struktur" />
+    <MESSAGE value="keine statischen Funktionen mehr; Model und Repository Klasse angelegt." />
+    <option name="LAST_COMMIT_MESSAGE" value="keine statischen Funktionen mehr; Model und Repository Klasse angelegt." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/HTMLB.php</url>
-          <line>55</line>
+          <line>71</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
