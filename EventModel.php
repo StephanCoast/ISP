@@ -1,12 +1,13 @@
 <?php
 
-class DataModel
+class EventModel
 {
     // Spalten der gejointen Datenbank: datum, nachname, vorname, eventname
     public $datum;
     public $nachname;
     public $vorname;
     public $eventname;
+
 
     /*
     // Zusätzliche Eigenschaften

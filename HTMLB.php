@@ -74,25 +74,34 @@ class HTMLB
 
     //TABELLE KONSTRUIEREN
 
-    public function responsiveTable($mitarbeiter, $von, $bis) {
-
-
+    public function responsiveTable($mitarbeiter, $von, $bis)
+    {
+        $j = 0;
         echo "<div style=\"overflow-x:auto;\">
                 <table>
               <tr>
-                <th>Mitarbeiter</th>
-                <th>Datum</th>
-              </tr>";
+                <th>Mitarbeiter</th>";
+              
+            for ($date=$von; $date<=$bis; $date++) {
+                echo "<th>$date</th>";
+            }
+
+            echo  "</tr>";
 
 
-        for ($i=0; $i<count($mitarbeiter); $i++) {
-            $nameMA = $mitarbeiter[$i]['nachname'] . ", " . $mitarbeiter[$i]['vorname'];
+            for ($i = 1; $i <= count($mitarbeiter); $i++) {
+                $nameMA = $mitarbeiter[$i-1]['nachname'] . ", " . $mitarbeiter[$i-1]['vorname'];
 
-            echo  " <tr>
-                <td>$nameMA</td>
-                <td>Event1</td>
-              </tr>";
-        }
+                echo " <tr>
+                    <td>$nameMA</td>";
+
+                    for ($date=$von; $date<=$bis; $date++) {
+                            $j++;
+                            echo "<td id=\"Z$i;S$j\"></td>";
+                        }
+
+                echo "</tr>";
+            }
 
 
         echo   "</table>
@@ -104,6 +113,26 @@ class HTMLB
 
         echo "<input type=button onClick=\"parent.location='$link'\" name=\"$name\" value=\"$text\">";
     }
+
+
+    public function writeJavascript()
+    {
+
+
+        echo "<script>
+
+              eventsJSON = document.getElementById('hidden').innerHTML;
+              let events = JSON.parse(eventsJSON);
+              console.log(events);
+              
+              </script>";
+    }
+
+    public function echoEventsJSON($events)
+    {
+        echo "<div id=\"hidden\" style=display:none>$events</div>";
+    }
+
 
     public function writeFooter()
     {

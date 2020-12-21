@@ -11,7 +11,7 @@ class DataRepository
         $this->pdo = $pdo;
     }
 
-    public function fetchData() {
+    public function fetchEventData() {
         $stmt = $this->pdo->prepare(
             "SELECT datum, nachname, vorname, eventname FROM mitarbeiter ma JOIN hasEvent hE ON hE.userid = ma.id JOIN event ev ON ev.eventid = hE.eventid"
         );
@@ -19,19 +19,43 @@ class DataRepository
      //   $stmt->bindParam(":end", $end);
         $stmt->execute();
 
-        // Ergebnis soll in "Mitarbeiter Model" gefüllt werden
-        // Objekt "$mitarbeiter" der Klasse "MitarbeiterModel" wird
-        // automatisch erstellt, ohne "$student = new StudentModel()"
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "DataModel");
+        // Ergebnis soll in "EventModel" gefüllt werden
+        // Objekt "$data" der Klasse "EventModel" wird
+        // automatisch erstellt, ohne "$data = new EventModel()"
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "EventModel");
 
-        $data =  $stmt->fetchAll(PDO::FETCH_CLASS, "DataModel");
+        $data =  $stmt->fetchAll(PDO::FETCH_CLASS, "EventModel");
 
-        /*
-        echo 'Das Objekt $student sieht wie folgt aus:<pre>';
-        print_r($student);
+
+        echo 'Das Objekt $data sieht wie folgt aus:<pre>';
+        print_r($data);
         echo '</pre>';
-        */
+
 
         return $data;
     }
+
+
+    public function fetchLoginData($email) {
+        $stmt = $this->pdo->prepare(
+            "SELECT * FROM mitarbeiter WHERE email = :email"
+        );
+        $stmt->bindParam(":email", $email);
+        //   $stmt->bindParam(":end", $end);
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
+
+    public function getMitarbeiter() {
+        $stmt = $this->pdo->prepare(
+            "SELECT nachname, vorname, id FROM mitarbeiter ORDER BY nachname"
+        );
+        // $stmt->bindParam(":email", $email);
+        //   $stmt->bindParam(":end", $end);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
 }

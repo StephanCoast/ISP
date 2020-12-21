@@ -2,7 +2,7 @@
 
 require_once __DIR__.DIRECTORY_SEPARATOR.'HTMLB.php';
 require_once __DIR__.DIRECTORY_SEPARATOR.'DataRepository.php';
-require_once __DIR__.DIRECTORY_SEPARATOR.'DataModel.php';
+require_once __DIR__.DIRECTORY_SEPARATOR.'EventModel.php';
 
 /**
  * Login User
@@ -30,16 +30,23 @@ try {
 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 
+// Objekt der Klasse DataRepository anlegen, PDO-Objekt übergeben
+$DataRepository = new DataRepository($pdo);
+
+
 // Abgleich Zugangsdaten mit Datenbank
 if($_GET['page'] == "login" && ISSET($_POST['email']) && ISSET($_POST['passwort'])) {
     $error = false;
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
 
-
+/*
     $statement = $pdo->prepare("SELECT * FROM mitarbeiter WHERE email = :email");
     $result = $statement->execute(array('email' => $email));  // :email in prepare statement auflösen
     $user = $statement->fetch();
+    */
+
+    $user = $DataRepository->fetchLoginData($email);
 
    // print_r($user);
 
@@ -52,7 +59,8 @@ if($_GET['page'] == "login" && ISSET($_POST['email']) && ISSET($_POST['passwort'
      //   exit();
 
     } else {
-        $fehlermeldung = "E-Mail oder Passwort ungültig!";
+        echo "E-Mail oder Passwort ungültig!";
+        $_GET['page'] = "start";
     }
 }
 
@@ -118,13 +126,20 @@ if(isset($_GET['newEvent'])) {
 
 
 
-// Abfrage alle Events und zugehörige Mitarbeiter:
-// SELECT datum, nachname, vorname, eventname FROM mitarbeiter ma JOIN hasEvent hE ON hE.userid = ma.id JOIN event ev ON ev.eventid = hE.eventid
 
 }
 
 
 
+/*
+// AJAX-GETREQUEST alle Events und zugehörige Mitarbeiter:
+// SELECT datum, nachname, vorname, eventname FROM mitarbeiter ma JOIN hasEvent hE ON hE.userid = ma.id JOIN event ev ON ev.eventid = hE.eventid
+if (ISSET($_GET['data'])) {
+    $events = $DataRepository->fetchEventData();
+    echo json_encode(array($events));
+
+}
+*/
 
 
 
@@ -163,11 +178,8 @@ if ($_GET['page'] == "w_einteilung") {
 
     $HTMLbuild->startForm("post", "?newEvent=1");
 
-    // Mitarbeiter aus Datenbank abrufen für Select-Element
-    $statement = $pdo->prepare("SELECT nachname, vorname, id FROM mitarbeiter ORDER BY nachname");
-    $result = $statement->execute();
-    $mitarbeiter = $statement->fetchAll();
-
+    // Mitarbeiterliste aus Datenbank abrufen für Select-Element
+    $mitarbeiter = $DataRepository->getMitarbeiter();
     // print_r($mitarbeiter);
 
     $HTMLbuild->openselectElement("mitarbeiterID");
@@ -183,11 +195,12 @@ if ($_GET['page'] == "w_einteilung") {
     $HTMLbuild->closeForm("Event hinzufügen");
 
     $HTMLbuild->responsiveTable($mitarbeiter, '2020-12-17', '2020-12-31');
-}
+   //$HTMLbuild->writeJavascript($events);
 
-if  (isset($fehlermeldung)) {
-    echo $fehlermeldung;
+    // Alle Events abrufen und an Javascript schicken
+    $events = json_encode($DataRepository->fetchEventData(),JSON_UNESCAPED_UNICODE);
+    $HTMLbuild->echoEventsJSON($events);
+    $HTMLbuild->writeJavascript();
 }
-
 
 $HTMLbuild->writeFooter();
