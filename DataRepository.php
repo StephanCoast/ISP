@@ -13,7 +13,7 @@ class DataRepository
 
     public function fetchEventData() {
         $stmt = $this->pdo->prepare(
-            "SELECT datum, nachname, vorname, eventname FROM mitarbeiter ma JOIN hasEvent hE ON hE.userid = ma.id JOIN event ev ON ev.eventid = hE.eventid"
+            "SELECT datum, nachname, vorname, eventname FROM mitarbeiter ma JOIN hasEvent hE ON hE.userid = ma.id JOIN event ev ON ev.eventid = hE.eventid ORDER BY nachname, vorname"
         );
      //   $stmt->bindParam(":start", $start);
      //   $stmt->bindParam(":end", $end);

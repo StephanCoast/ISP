@@ -2,7 +2,6 @@
 
 require_once 'HTMLB.php';
 
-session_start();
 $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de;dbname=kosts_db', 'kosts', '20192019');
 $pdo->exec("set names utf8");
 $showFormular = true;
@@ -22,7 +21,12 @@ if(isset($_GET['register'])) {
     $passwort2 = $_POST['passwort2'];
     $vorname = $_POST['vorname'];
     $nachname = $_POST['nachname'];
+    $einladungscode = $_POST['einladungscode'];
 
+    if ($einladungscode != 'hereinspaziert') {
+        echo 'Der eingegebene Einladungscode existiert nicht!<br>';
+        $error = true;
+    }
 
     if (empty($vorname)) {
         echo 'Bitte einen Vornamen eingeben!<br>';
@@ -83,6 +87,7 @@ $HMTLbuild->writeHeader();
 if ($showFormular) {
     $HMTLbuild->writeHeadline("Wocheneinteilung");
     $HMTLbuild->startForm("post", "?register=1");
+    $HMTLbuild->writeInputField("Einladungscode", "einladungscode", "password");
     $HMTLbuild->writeInputField("Vorname", "vorname", "text");
     $HMTLbuild->writeInputField("Nachname", "nachname", "text");
     $HMTLbuild->writeInputField("E-Mail", "email", "email");

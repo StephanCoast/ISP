@@ -11,8 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/_alt/w_einteilung.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTMLB.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fetchData.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/w_einteilung.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +99,8 @@
       <workItem from="1607853149618" duration="26849000" />
       <workItem from="1608380630113" duration="9718000" />
       <workItem from="1608456139977" duration="11795000" />
-      <workItem from="1608552215041" duration="30299000" />
+      <workItem from="1608552215041" duration="30453000" />
+      <workItem from="1608988676260" duration="19858000" />
     </task>
     <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
       <created>1606585887570</created>
@@ -165,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608585145742</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Events per Javascript in Tabelle eingeordnet - verbesserung">
+      <created>1608586269838</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608586269838</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,17 +209,7 @@
     <MESSAGE value="w_einteilung.php in index.php überführt." />
     <MESSAGE value="Zellen mit Z1S1 ID versehen.&#10;data per JSON an document DOM übertragen&#10;bereit für Javascript einordnen der Events in Tabelle!" />
     <MESSAGE value="Events per Javascript in Tabelle eingeordnet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Events per Javascript in Tabelle eingeordnet" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/HTMLB.php</url>
-          <line>71</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Events per Javascript in Tabelle eingeordnet - verbesserung" />
+    <option name="LAST_COMMIT_MESSAGE" value="Events per Javascript in Tabelle eingeordnet - verbesserung" />
   </component>
 </project>

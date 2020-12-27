@@ -76,6 +76,10 @@ class HTMLB
 
     public function responsiveTable($mitarbeiter, $von, $bis)
     {
+
+        $von = strtotime($von);
+        $bis = strtotime($bis);
+
         $j = 0;
         echo "<div style=\"overflow-x:auto;\">
                 <table id='wocheneinteilung'>
@@ -84,8 +88,9 @@ class HTMLB
                 <th>Vorname</th>";
 
 
-            for ($date=$von; $date<=$bis; $date++) {
-                echo "<th>$date</th>";
+            for ($date=$von; $date<=$bis; $date=$date+86400) {
+                $printdate = date('Y-m-d',$date);
+                echo "<th>$printdate</th>";
             }
 
             echo  "</tr>";
@@ -99,7 +104,7 @@ class HTMLB
                     <td>$nachnameMA</td>
                     <td>$vornameMA</td>";
 
-                    for ($date=$von; $date<=$bis; $date++) {
+                    for ($date=$von; $date<=$bis; $date=$date+86400) {
                             $j++;
                             echo "<td id=\"Z$i;S$j\"></td>";
                         }
@@ -110,6 +115,7 @@ class HTMLB
 
         echo   "</table>
             </div> ";
+
     }
 
 
@@ -127,23 +133,30 @@ class HTMLB
 
               eventsJSON = document.getElementById('hidden').innerHTML;
               let events = JSON.parse(eventsJSON);
-              //console.log(events);
+              console.log(events);
               
               let table = document.getElementById('wocheneinteilung');
               let datediff = 0;
+              let j = 0;
               
-              for (let i=0; i < table.rows.length; i++) {
+              try {
               
-                  for (let e=0; e< events.length; e++) {  
+              for (let i=1; i < table.rows.length; i++) {
+              
+                  while (j < events.length && events[j]['nachname'] === table.rows[i].cells[0].innerHTML) {  
                       
-                      if (table.rows[i].cells[0].innerHTML === events[e]['nachname'] && table.rows[i].cells[1].innerHTML === events[e]['vorname']) {
-                          
-                          datediff = (((Date.parse(events[e]['datum']) - Date.parse(table.rows[0].cells[2].innerHTML)))/1000/60/60/24+2);
-                          //console.log(datediff);
-                          table.rows[i].cells[datediff].innerHTML = events[e]['eventname'];
-                      }
+                      datediff = (((Date.parse(events[j]['datum']) - Date.parse(table.rows[0].cells[2].innerHTML)))/1000/60/60/24+2);
+                   //   datediff = (((d.parse(events[j]['datum']) - d.parse(table.rows[0].cells[2].innerHTML)))/1000/60/60/24+2);
+                   //   console.log(datediff);
                       
+                  //    console.log(events[j]['nachname']);
+                      table.rows[i].cells[datediff].innerHTML = events[j]['eventname'];
+                      j++;
                   }
+              }
+              
+              } catch (e) {
+                  window.alert('Es sind noch keine Events bzw. Mitarbeiter in der Datenbank enthalten!');
               }
               
               </script>";
