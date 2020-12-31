@@ -55,6 +55,13 @@ class HTMLB
           <input type=\"$typ\" name=\"$name\" id=\"$name\">";
     }
 
+    public function writePredefinedInputField($text, $name, $typ, $value)
+
+    {
+        echo "<label for=\"$name\">$text: </label>
+          <input type=\"$typ\" name=\"$name\" id=\"$name\" value=\"$value\">";
+    }
+
     //SELECT-ELEMENT VARIABEL FÜLLEN
 
     public function openselectElement($name) {

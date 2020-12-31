@@ -11,14 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_alt/w_einteilung.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ISP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ISP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTMLB.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fetchData.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/w_einteilung.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +35,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MessDetectorBlackList">
+    <option name="filePaths">
+      <option value="$PROJECT_DIR$/_alt/w_einteilung.php" />
+    </option>
+  </component>
+  <component name="PHPCSFixerBlackList">
+    <option name="filePaths">
+      <option value="$PROJECT_DIR$/_alt/w_einteilung.php" />
+    </option>
+  </component>
+  <component name="PHPCodeSnifferBlackList">
+    <option name="filePaths">
+      <option value="$PROJECT_DIR$/_alt/w_einteilung.php" />
+    </option>
+  </component>
   <component name="PhpServers">
     <servers>
       <server host="http://localhost" id="30abaceb-7030-4706-87a9-c32e88b2c187" name="THB" />
     </servers>
+  </component>
+  <component name="PhpStanBlackList">
+    <option name="filePaths">
+      <option value="$PROJECT_DIR$/_alt/w_einteilung.php" />
+    </option>
   </component>
   <component name="ProjectId" id="1kvbbYm9gkim11o1yO3H90XzulX" />
   <component name="ProjectLevelVcsManager">
@@ -67,6 +84,11 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="sql.rename.search.for.storage.occurrences" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="PsalmBlackList">
+    <option name="filePaths">
+      <option value="$PROJECT_DIR$/_alt/w_einteilung.php" />
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -100,7 +122,7 @@
       <workItem from="1608380630113" duration="9718000" />
       <workItem from="1608456139977" duration="11795000" />
       <workItem from="1608552215041" duration="30453000" />
-      <workItem from="1608988676260" duration="19858000" />
+      <workItem from="1608988676260" duration="40140000" />
     </task>
     <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
       <created>1606585887570</created>
@@ -179,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608586269838</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Zeitraumauswahl eingefügt, Abruf Events nur in bestimmtem Zeitraum fehlt noch oder Filter in Javascript">
+      <created>1609093948635</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1609093948635</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +239,7 @@
     <MESSAGE value="Zellen mit Z1S1 ID versehen.&#10;data per JSON an document DOM übertragen&#10;bereit für Javascript einordnen der Events in Tabelle!" />
     <MESSAGE value="Events per Javascript in Tabelle eingeordnet" />
     <MESSAGE value="Events per Javascript in Tabelle eingeordnet - verbesserung" />
-    <option name="LAST_COMMIT_MESSAGE" value="Events per Javascript in Tabelle eingeordnet - verbesserung" />
+    <MESSAGE value="Zeitraumauswahl eingefügt, Abruf Events nur in bestimmtem Zeitraum fehlt noch oder Filter in Javascript" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zeitraumauswahl eingefügt, Abruf Events nur in bestimmtem Zeitraum fehlt noch oder Filter in Javascript" />
   </component>
 </project>

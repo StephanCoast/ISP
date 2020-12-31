@@ -20,24 +20,25 @@ if (!ISSET($_GET['page'])) {
 session_start();
 
 
-//if (!ISSET($pdo) && $_GET['page'] !== 'start') {
-
- //   echo '<script>console.log(\'Datenbankverbindung wird aufgebaut!\')</script>';
-    //Datenbankverbindung aufbauen
-    try {
-        $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de; charset=utf8; dbname=kosts_db', 'kosts', '20192019');
-        $pdo->exec("set names utf8");
-
-    } catch (Exception $e) {
-        echo "Verbindung zur Datenbank funktioniert nicht";
-        exit;
-    }
+//Datenbankverbindung mit PDO aufbauen
+try {
+    $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de; charset=utf8; dbname=kosts_db', 'kosts', '20192019');
+    $pdo->exec("set names utf8");
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-// Objekt der Klasse DataRepository anlegen, PDO-Objekt übergeben
-    $DataRepository = new DataRepository($pdo);
+} catch (Exception $e) {
+    echo "Verbindung zur Datenbank funktioniert nicht";
+    exit;
+}
 
-//}
+// Objekt der Klasse DataRepository anlegen, PDO-Objekt übergeben
+$DataRepository = new DataRepository($pdo);
+
+
+// Objekt von Klasse HTMLB erstellen
+if (!ISSET($HTMLbuild)) {
+    $HTMLbuild = new HTMLB;
+}
 
 
 if ($_GET['page'] === 'restart') {
@@ -72,6 +73,14 @@ if($_GET['page'] == "login" && ISSET($_POST['email']) && ISSET($_POST['passwort'
 }
 
 
+if(isset($_GET['replace'])) {
+
+    $DataRepository->deleteEvent($_SESSION['overlapEventId']);
+    $DataRepository->addEvent($_SESSION['eventname'], $_SESSION['datum'], $_SESSION['userid']);
+    $_GET['page'] = "w_einteilung";
+
+}
+
 
 // EVENT zur Datenbank hinzufügen - Prüfen ob Event schon vorhanden!
 
@@ -80,81 +89,55 @@ if(isset($_GET['newEvent'])) {
   //  print_r($_POST);
 
     $error = false;
-    $eventName = $_POST['eventName'];
-    $mitarbeiterID = $_POST['mitarbeiterID'];
-    $datum = $_POST['datum'];
+    $_SESSION['eventname'] = $_POST['eventName'];
+    $_SESSION['userid'] = $_POST['mitarbeiterID'];
+    $_SESSION['datum'] = $_POST['datum'];
 
-    if (empty($eventName)){
+    if (empty($_POST['eventName'])){
         echo 'Bitte einen Eventnamen eingeben!<br>';
         $error = true;
     }
 
-    if (empty($datum)){
+    if (empty($_POST['datum'])){
         echo 'Bitte ein Datum eingeben!<br>';
         $error = true;
     }
 
-    //Keine Fehler, das Event kann in die Datenbank aufgenommen werden
-
     if (!$error) {
 
+        $hasEvent = $DataRepository->gethasEvent();
 
-        $statement = $pdo->prepare("INSERT INTO event (eventname, datum) VALUES (:eventname, :datum)");
-        $result = $statement->execute(array('eventname' => $eventName, 'datum' => $datum));
+        for ($i = 0; $i < count($hasEvent); $i++) {
 
-        if ($result) {
-            echo 'Event wurde erfolgreich registriert.';
-            // $showPage = false;
-        } else {
-            echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
+            if ($hasEvent[$i]['datum'] == $_SESSION['datum'] && $hasEvent[$i]['userid'] == $_SESSION['userid']) {
+
+                $_SESSION['overlapEventId'] = $hasEvent[$i]['eventid'];
+
+                $HTMLbuild->startForm("POST", "?replace=1");
+                echo 'Das Event überschneidet sich mit einem vorhandenen Event! Vorhandenes Event ersetzen?<br>';
+                $HTMLbuild->closeForm("Ja");
+                $HTMLbuild->addLinkButton("Nein", "nein", "?page=w_einteilung");
+
+                $error = true;
+            }
         }
-
-
-        // Gerade angelegter Eventeintrag hat maximalen Schlüssel durch AutoIncrement
-        $statement = $pdo->prepare("SELECT * FROM event WHERE eventid = ( SELECT MAX(eventid) FROM event )");
-        $result = $statement->execute();
-        $eventMax = $statement->fetch();
-      //  echo '<br><br>' . $eventMax['eventid'];
-
-
-        // Event Mitarbeiter zuordnen
-        $statement = $pdo->prepare("INSERT INTO hasEvent (userid, eventid) VALUES (:userid, :eventid)");
-        $result = $statement->execute(array('userid' => $mitarbeiterID, 'eventid' => $eventMax['eventid']));
-
-        if ($result) {
-           // echo 'Event wurde erfolgreich dem Mitarbeiter zugeordnet (hasEvent).';
-            $_GET['page'] = "w_einteilung";
-        } else {
-            echo 'Zuordnung des Events zum Mitarbeiter fehlgeschlagen.' .'<br>';
-        }
-
     }
 
+    //Keine Fehler, das Event kann in die Datenbank (event & hasEvent) eingetragen werden
+    if (!$error) {
+    $DataRepository->addEvent($_SESSION['eventname'], $_SESSION['datum'], $_SESSION['userid']);
+    }
 
-
-
-}
-
-
-
-/*
-// AJAX-GETREQUEST alle Events und zugehörige Mitarbeiter:
-// SELECT datum, nachname, vorname, eventname FROM mitarbeiter ma JOIN hasEvent hE ON hE.userid = ma.id JOIN event ev ON ev.eventid = hE.eventid
-if (ISSET($_GET['data'])) {
-    $events = $DataRepository->fetchEventData();
-    echo json_encode(array($events));
+    //Stay with HTML w_einteilung
+    $_GET['page'] = "w_einteilung";
 
 }
-*/
 
 
 
-// Beginn des Hauptprogramms
 
-// Objekt von Klasse HTMLB erstellen
-if (!ISSET($HTMLbuild)) {
-    $HTMLbuild = new HTMLB;
-}
+
+// Beginn des HTML-Aufbau
 
 $HTMLbuild->writeHeader();
 $HTMLbuild->writeHeadline("Wocheneinteilung");
@@ -174,18 +157,43 @@ if ($_GET['page'] == "start") {
 // WOCHENEINTEILUNG NACH LOGIN
 if ($_GET['page'] === "w_einteilung") {
 
-    if(!isset($_SESSION['userid'])) {
+    if (!isset($_SESSION['userid'])) {
         exit('Bitte zuerst <a href="index.php">einloggen</a>');
     }
-
     //Abfrage der Nutzername vom Login
     $username = $_SESSION['username'];
-    echo "Hallo ".$username . "!";
+    echo "Hallo " . $username . "!";
     $HTMLbuild->addLinkButton("Ausloggen", "logoutButton", "index.php?page=restart");
 
+
+    // Aktuelle Tabellenansicht aufrechterhalten & Von-Bis-Felder prüfen ob leer
+    if (isset($_POST['von'])) {
+        if ($_POST['von'] > 0)
+            $_SESSION['von'] = $_POST['von'];
+    }
+    if (isset($_POST['bis'])) {
+        if ($_POST['bis'] > 0)
+            $_SESSION['bis'] = $_POST['bis'];
+    }
+
+    //Standardbereich heute +1 Woche zu Beginn festlegen
+    if (!ISSET($_SESSION['von']) && !ISSET($_SESSION['bis'])) {
+        $_SESSION['von'] = date('Y-m-d');
+        $_SESSION['bis'] = date('Y-m-d', strtotime("+1 week"));
+    }
+
+
+    // Wenn Von > Bis, dann Tausch der Werte
+    if (strtotime($_SESSION['von']) > strtotime($_SESSION['bis'])) {
+        $temp = $_SESSION['von'];
+        $_SESSION['von'] = $_SESSION['bis'];
+        $_SESSION['bis'] = $temp;
+    }
+
+
     $HTMLbuild->startForm("POST", "?page=w_einteilung");
-    $HTMLbuild->writeInputField("Von", "von", "date");
-    $HTMLbuild->writeInputField("Bis", "bis", "date");
+    $HTMLbuild->writePredefinedInputField("Von", "von", "date", $_SESSION['von']);
+    $HTMLbuild->writePredefinedInputField("Bis", "bis", "date", $_SESSION['bis']);
     $HTMLbuild->closeForm("Zeitraum ändern");
 
     // HTML-Seitenaufbau
@@ -196,14 +204,7 @@ if ($_GET['page'] === "w_einteilung") {
     $mitarbeiter = $DataRepository->getMitarbeiter();
     // print_r($mitarbeiter);
 
-
-    if (!ISSET($_POST['von']) && !ISSET($_POST['bis'])) {
-        $_POST['von'] = date('Y-m-d');
-        $_POST['bis'] = date('Y-m-d', strtotime("+1 week"));
-    }
-    //JAHRESWECHSEL BEACHTEN!!
-
-    $HTMLbuild->responsiveTable($mitarbeiter, $_POST['von'], $_POST['bis']);
+    $HTMLbuild->responsiveTable($mitarbeiter, $_SESSION['von'], $_SESSION['bis']);
 
     $HTMLbuild->startForm("post", "?newEvent=1");
 
@@ -220,7 +221,7 @@ if ($_GET['page'] === "w_einteilung") {
     $HTMLbuild->closeForm("Event hinzufügen");
 
     // Alle Events abrufen und in hidden HTML div schreiben
-    $events = json_encode($DataRepository->fetchEventData(),JSON_UNESCAPED_UNICODE);
+    $events = json_encode($DataRepository->fetchEventData($_SESSION['von'], $_SESSION['bis']),JSON_UNESCAPED_UNICODE);
     $HTMLbuild->echoEventsJSON($events);
     // EVENTS mittels Javascript in vorgefertigte Tabelle einfügen
     $HTMLbuild->writeJavascript();
