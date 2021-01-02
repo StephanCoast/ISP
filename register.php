@@ -23,7 +23,7 @@ if(isset($_GET['register'])) {
     $nachname = $_POST['nachname'];
     $einladungscode = $_POST['einladungscode'];
 
-    if ($einladungscode != 'hereinspaziert') {
+    if ($einladungscode != 'ISP2021') {
         echo 'Der eingegebene Einladungscode existiert nicht!<br>';
         $error = true;
     }
@@ -85,7 +85,7 @@ $HMTLbuild = new HTMLB();
 $HMTLbuild->writeHeader();
 
 if ($showFormular) {
-    $HMTLbuild->writeHeadline("Wocheneinteilung");
+    $HMTLbuild->writeHeadline("Eventkalender");
     $HMTLbuild->startForm("post", "?register=1");
     $HMTLbuild->writeInputField("Einladungscode", "einladungscode", "password");
     $HMTLbuild->writeInputField("Vorname", "vorname", "text");

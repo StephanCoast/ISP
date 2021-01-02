@@ -23,12 +23,12 @@ class DataRepository
         $stmt->bindParam(":bis", $bis);
         $stmt->execute();
 
-        // Ergebnis soll in "EventModel" gefüllt werden
-        // Objekt "$data" der Klasse "EventModel" wird
-        // automatisch erstellt, ohne "$data = new EventModel()"
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "EventModel");
+        // Ergebnis soll in "DataModel" gefüllt werden
+        // Objekt "$data" der Klasse "DataModel" wird
+        // automatisch erstellt, ohne "$data = new DataModel()"
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "DataModel");
 
-        $data =  $stmt->fetchAll(PDO::FETCH_CLASS, "EventModel");
+        $data =  $stmt->fetchAll(PDO::FETCH_CLASS, "DataModel");
 
         /*
         echo 'Das Objekt $data sieht wie folgt aus:<pre>';

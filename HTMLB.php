@@ -52,7 +52,7 @@ class HTMLB
 
     {
         echo "<label for=\"$name\">$text: </label>
-          <input type=\"$typ\" name=\"$name\" id=\"$name\">";
+          <input type='$typ' name=\"$name\" id=\"$name\" maxlength='30'>";
     }
 
     public function writePredefinedInputField($text, $name, $typ, $value)

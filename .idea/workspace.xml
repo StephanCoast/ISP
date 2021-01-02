@@ -11,11 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d266466-a0e6-40e7-bf20-faf557c6feb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ISP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ISP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTMLB.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTMLB.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +124,8 @@
       <workItem from="1608380630113" duration="9718000" />
       <workItem from="1608456139977" duration="11795000" />
       <workItem from="1608552215041" duration="30453000" />
-      <workItem from="1608988676260" duration="40140000" />
+      <workItem from="1608988676260" duration="41679000" />
+      <workItem from="1609588924356" duration="4037000" />
     </task>
     <task id="LOCAL-00001" summary="Neues VZ - Projektstart">
       <created>1606585887570</created>
@@ -208,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609093948635</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Alle SQL Abfragen in dataRepository verschoben, VonBis Felder überprüfen &amp; Standardwerte">
+      <created>1609418482281</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609418482281</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +250,7 @@
     <MESSAGE value="Events per Javascript in Tabelle eingeordnet" />
     <MESSAGE value="Events per Javascript in Tabelle eingeordnet - verbesserung" />
     <MESSAGE value="Zeitraumauswahl eingefügt, Abruf Events nur in bestimmtem Zeitraum fehlt noch oder Filter in Javascript" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zeitraumauswahl eingefügt, Abruf Events nur in bestimmtem Zeitraum fehlt noch oder Filter in Javascript" />
+    <MESSAGE value="Alle SQL Abfragen in dataRepository verschoben, VonBis Felder überprüfen &amp; Standardwerte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alle SQL Abfragen in dataRepository verschoben, VonBis Felder überprüfen &amp; Standardwerte" />
   </component>
 </project>

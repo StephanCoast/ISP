@@ -2,7 +2,7 @@
 
 require_once __DIR__.DIRECTORY_SEPARATOR.'HTMLB.php';
 require_once __DIR__.DIRECTORY_SEPARATOR.'DataRepository.php';
-require_once __DIR__.DIRECTORY_SEPARATOR.'EventModel.php';
+require_once __DIR__.DIRECTORY_SEPARATOR.'DataModel.php';
 
 /**
  * Login User
@@ -89,12 +89,9 @@ if(isset($_GET['newEvent'])) {
   //  print_r($_POST);
 
     $error = false;
-    $_SESSION['eventname'] = $_POST['eventName'];
-    $_SESSION['userid'] = $_POST['mitarbeiterID'];
-    $_SESSION['datum'] = $_POST['datum'];
 
-    if (empty($_POST['eventName'])){
-        echo 'Bitte einen Eventnamen eingeben!<br>';
+    if (empty($_POST['eventname'])){
+        echo 'Bitte einen gültigen Eventnamen eingeben (max. 30 Zeichen)!<br>';
         $error = true;
     }
 
@@ -104,6 +101,10 @@ if(isset($_GET['newEvent'])) {
     }
 
     if (!$error) {
+
+        $_SESSION['eventname'] = $_POST['eventname'];
+        $_SESSION['userid'] = $_POST['mitarbeiterID'];
+        $_SESSION['datum'] = $_POST['datum'];
 
         $hasEvent = $DataRepository->gethasEvent();
 
@@ -140,7 +141,7 @@ if(isset($_GET['newEvent'])) {
 // Beginn des HTML-Aufbau
 
 $HTMLbuild->writeHeader();
-$HTMLbuild->writeHeadline("Wocheneinteilung");
+$HTMLbuild->writeHeadline("Eventkalender");
 
 // LOGIN-FORMULAR
 if ($_GET['page'] == "start") {
@@ -216,7 +217,7 @@ if ($_GET['page'] === "w_einteilung") {
     }
     $HTMLbuild->closeselectElement();
 
-    $HTMLbuild->writeInputField("Event-Name", "eventName", "text");
+    $HTMLbuild->writeInputField("Eventname", "eventname", "text");
     $HTMLbuild->writeInputField("Datum", "datum", "date");
     $HTMLbuild->closeForm("Event hinzufügen");
 
