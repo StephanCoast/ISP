@@ -22,7 +22,7 @@ session_start();
 
 //Datenbankverbindung mit PDO aufbauen
 try {
-    $pdo = new PDO('mysql:host=fbi-mysqllehre.th-brandenburg.de; charset=utf8; dbname=kosts_db', 'kosts', '20192019');
+    $pdo = new PDO('mysql:host=datenbank.thb.de; charset=utf8; dbname=user_db', 'username', 'password');
     $pdo->exec("set names utf8");
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
